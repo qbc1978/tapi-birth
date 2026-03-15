@@ -399,51 +399,55 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── LINKS ── */
+    /* ── LINKS（小さく・控えめ）── */
     .links-section {
       background: var(--white);
       border-top: 1px solid var(--border);
+      padding: 4rem 0;
     }
-
+    .links-section .section-label {
+      margin-bottom: 2rem;
+    }
+ 
     .links-list {
       list-style: none;
     }
     .links-list li {
       border-bottom: 1px solid var(--border);
       opacity: 0;
-      transform: translateX(-10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateX(-7px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
     .links-list li.visible { opacity: 1; transform: translateX(0); }
-
+ 
     .links-list a {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      padding: 1.4rem 0;
+      padding: 1rem 0;
       text-decoration: none;
-      color: var(--ink);
-      transition: color 0.3s;
+      color: var(--ink-light);
+      transition: color 0.25s;
       gap: 2rem;
     }
-    .links-list a:hover { color: var(--ink-light); }
-
+    .links-list a:hover { color: var(--ink); }
+ 
     .link-title {
-      font-size: 0.88rem;
-      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
       flex: 1;
     }
     .link-category {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
       color: var(--ink-xlight);
       white-space: nowrap;
     }
     .link-arrow {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--ink-xlight);
-      margin-left: 1rem;
+      margin-left: 0.5rem;
     }
 
     /* ── COMING SOON ── */
