@@ -38,6 +38,10 @@
       --accent-lavender: rgba(130,180,170,0.30); /* 青緑 */
       --accent-yellow: rgba(170,175,185,0.25); /* グレー */
       --border: rgba(26,26,24,0.10);
+        /* 追加 */
+      --panel: #f3f3f1;
+      --border-strong: rgba(26,26,24,0.16);
+      --accent: #6f7f96;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -398,7 +402,121 @@
       border-radius: 2px;
       letter-spacing: 0.05em;
     }
-
+    
+    /* ── MAGAZINE ── */
+    .magazine-section {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+    
+    .magazine-intro {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 2;
+      margin-bottom: 2rem;
+      max-width: 860px;
+    }
+    
+    .magazine-card {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .magazine-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    
+    .magazine-card-text {
+      padding: 2.2rem 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 260px;
+    }
+    
+    .magazine-card-title {
+      font-size: clamp(1.5rem, 2.1vw, 2.5rem);
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      color: #06131f;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    
+    .magazine-card-desc {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    
+    .magazine-card-domain {
+      font-size: 0.95rem;
+      color: #3f3f46;
+    }
+    
+    .magazine-card-image {
+      position: relative;
+      min-height: 260px;
+      background: #f6f6f4;
+    }
+    
+    .magazine-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* 下の細いリンクバーを付けたい場合 */
+    .magazine-link-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-top: 1rem;
+    }
+    
+    .magazine-link-bar a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .magazine-link-bar a:hover {
+      text-decoration: underline;
+    }
+    
+    /* スマホ対応 */
+    @media (max-width: 900px) {
+      .magazine-card {
+        grid-template-columns: 1fr;
+      }
+    
+      .magazine-card-text {
+        min-height: auto;
+        padding: 1.5rem 1.4rem 1.4rem;
+      }
+    
+      .magazine-card-image {
+        min-height: 220px;
+        order: -1;
+      }
+    
+      .magazine-card-title {
+        font-size: 1.5rem;
+      }
+    }
     /* ── LINKS（小さく・控えめ）── */
     .links-section {
       background: var(--white);
@@ -812,6 +930,52 @@
         </p>
         <code>&lt;iframe src="https://docs.google.com/forms/d/e/YOUR_ID/viewform?embedded=true" width="100%" height="680" frameborder="0"&gt;&lt;/iframe&gt;</code>
       </div>
+    </div>
+  </div>
+</section>
+<section id="magazine" class="content-section magazine-section">
+  <div class="section-inner">
+    <div class="section-label-wrap">
+      <div class="section-line"></div>
+      <div class="section-label">MAGAZINE</div>
+    </div>
+
+    <p class="magazine-intro">
+      研究企画第一弾「子どもを持つ理由・持たない理由」関連note記事は、こちらから全てお読みいただけます。
+    </p>
+
+    <a
+      class="magazine-card"
+      href="https://note.com/xxxxxxxx/m/magazine_id"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="magazine-card-text">
+        <h3 class="magazine-card-title">
+          子どもを持つ理由・持たない理由｜無名人インタビュー🐈｜note
+        </h3>
+        <p class="magazine-card-desc">
+          子どもを持つ理由・持たない理由に関する「声」を集めています。
+        </p>
+        <div class="magazine-card-domain">note.com</div>
+      </div>
+
+      <div class="magazine-card-image">
+        <img
+          src="images/note-magazine-cover.jpg"
+          alt="noteマガジン『子どもを持つ理由・持たない理由』のカバー画像"
+        >
+      </div>
+    </a>
+
+    <div class="magazine-link-bar">
+      <a
+        href="https://note.com/xxxxxxxx/m/magazine_id"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        NOTE で開く →
+      </a>
     </div>
   </div>
 </section>
